@@ -5,7 +5,8 @@ import java.util.Stack;
 
 /**
  * @Package: com.learning.stack
- * @Description: 20. Valid Parentheses
+ * @Description: 20. Valid Parenthesesm
+ * 				 921. Minimum Add to Make Parentheses Valid
  * @Author: Sammy
  * @Date: 2020/11/14 11:01
  */
@@ -37,4 +38,24 @@ public class ValidParentheses {
 		}
 		return stack.isEmpty();
     }
+
+    public int minAddToMakeValid(String S) {
+		Stack<Character> stack = new Stack<>();
+		for (int i = 0; i < S.length(); i++) {
+			if (S.charAt(i) == '(') {
+				stack.push('(');
+			} else {
+				if (!stack.isEmpty() && stack.peek()=='(') {
+					stack.pop();
+				} else {
+					stack.push(')');
+				}
+			}
+		}
+		return stack.size();
+	}
+
+	public static void main(String[] args) {
+		System.out.println(new ValidParentheses().minAddToMakeValid("()))(("));
+	}
 }
