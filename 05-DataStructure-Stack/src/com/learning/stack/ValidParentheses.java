@@ -1,13 +1,11 @@
-package com.learning;
+package com.learning.stack;
 
-import java.nio.file.StandardWatchEventKinds;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Stack;
 
 /**
- * @Package: com.learning
- * @Description: Valid Parentheses
+ * @Package: com.learning.stack
+ * @Description: 20. Valid Parentheses
  * @Author: Sammy
  * @Date: 2020/11/14 11:01
  */

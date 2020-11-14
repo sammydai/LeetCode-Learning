@@ -1,10 +1,8 @@
-package com.learning;
-
-import java.util.ArrayList;
+package com.learning.stack;
 
 /**
- * @Package: com.learning
- * @Description: ArrayStack
+ * @Package: com.learning.stack
+ * @Description: GeekTime:Stack ArrayStack
  * @Author: Sammy
  * @Date: 2020/11/14 10:53
  */

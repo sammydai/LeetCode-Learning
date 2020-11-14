@@ -1,7 +1,7 @@
-package com.learning.demo;
+package com.learning.binarysearch;
 
 /**
- * @Package: com.learning.demo
+ * @Package: com.learning.binarysearch
  * @Description:
  * @Author: Sammy
  * @Date: 2020/11/9 10:22
