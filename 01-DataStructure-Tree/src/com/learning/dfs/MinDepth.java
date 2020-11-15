@@ -11,7 +11,7 @@ import sun.jvm.hotspot.debugger.MachineDescriptionIntelX86;
  */
 
 public class MinDepth {
-	public int minDepth(TreeNode root) {
+	public static int minDepth(TreeNode root) {
 		if (root == null) return 0;
 		if (root.left==null&& root.right==null){
 			return 1;

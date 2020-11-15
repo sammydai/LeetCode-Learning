@@ -1,9 +1,11 @@
 package com.learning.test;
 
+import com.learning.dfs.MinDepth;
 import com.learning.tree.TreeNode;
 
 import static com.learning.bfs.BreadFirstSearch.breadFirstSearch;
 import static com.learning.bfs.levelOrderBottom.levelOrderBottom;
+import static com.learning.dfs.MinDepth.minDepth;
 
 /**
  * @Package: com.learning.test
@@ -25,11 +27,12 @@ public class TestTree {
 		// TreeNode rl = new TreeNode(9,null,null);
 		// TreeNode rr = new TreeNode(20,t1,t2);
 		TreeNode root = new TreeNode(3, rl,rr);
-		System.out.println("breadFirstSearch:");
-		System.out.println("-----------------");
-		breadFirstSearch(root);
-		System.out.println("breadFirstSearch1:");
-		System.out.println("-----------------");
-		System.out.println(levelOrderBottom(root));
+		// System.out.println("breadFirstSearch:");
+		// System.out.println("-----------------");
+		// breadFirstSearch(root);
+		// System.out.println("breadFirstSearch1:");
+		// System.out.println("-----------------");
+		// System.out.println(levelOrderBottom(root));
+		System.out.println(minDepth(root));
 	}
 }
