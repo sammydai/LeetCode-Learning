@@ -13,6 +13,7 @@ public class LeeSort {
 	/**
 	 * 242. Valid Anagram
 	 * 主要是int[] m数组，通过字符的ascii码作为下标
+	 * 只有字符的搜索排序方法
 	 * @param s
 	 * @param t
 	 * @return
