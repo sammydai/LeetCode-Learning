@@ -20,17 +20,6 @@ public class IsSubsequence {
 		// System.out.println(allSubSequence3("ape"));
 	}
 
-
-	public int numMatchingSubseq(String S, String[] words) {
-		int res = 0;
-		for (String word : words) {
-			if (isSubsequence(word, S)) {
-				res++;
-			}
-		}
-		return res;
-    }
-
 	public static boolean isSubsequence(String s, String t) {
 		int i = 0;
 		int j = 0;
@@ -90,7 +79,6 @@ public class IsSubsequence {
 		}
 		return -1;
 	}
-
 
 	public static List<List<String>> allSubSequence(String t) {
 		List<List<String>> result = new ArrayList<>();
