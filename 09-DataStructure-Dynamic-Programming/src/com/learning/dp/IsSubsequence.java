@@ -1,7 +1,10 @@
 package com.learning.dp;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.sun.tools.javac.comp.Lower;
+
+import javax.swing.text.Highlighter;
+import java.rmi.MarshalledObject;
+import java.util.*;
 
 /**
  * @Package: com.learning.dp
@@ -12,9 +15,77 @@ import java.util.List;
 
 public class IsSubsequence {
 	public static void main(String[] args) {
-		System.out.println(allSubSequence3("ape"));
+		// System.out.println(isSubsequence("pe", "ape"));
+		System.out.println(isSubsequence2("pe", "ape"));
 		// System.out.println(allSubSequence("ape"));
+		// System.out.println(allSubSequence3("ape"));
 	}
+
+
+	public int numMatchingSubseq(String S, String[] words) {
+		int res = 0;
+		for (String word : words) {
+			if (isSubsequence(word, S)) {
+				res++;
+			}
+		}
+		return res;
+    }
+
+	public static boolean isSubsequence(String s, String t) {
+		int i = 0;
+		int j = 0;
+		while (i < s.length() && j < t.length()) {
+			if (s.charAt(i)==t.charAt(j)) {
+				i++;
+			}
+			j++;
+		}
+		return i == s.length();
+    }
+
+    public static boolean isSubsequence2(String s, String t) {
+		Map<Character, List<Integer>> map = new HashMap<>(); //<character, index>
+		for (int i = 0; i < t.length(); i++) {
+			char curr = t.charAt(i);
+			if (!map.containsKey(curr)) {
+				map.put(curr, new ArrayList<Integer>());
+			}
+			map.get(curr).add(i);
+		}
+		int prefix = -1;
+		for (int i = 0; i < s.length(); i++) {
+			char schar = s.charAt(i);
+			if (!map.containsKey(schar)) {
+				return false;
+			} else {
+				List<Integer> list = map.get(schar);
+				prefix = binarysearch(list, prefix, 0, list.size() - 1);
+				if (prefix == -1) {
+					return false;
+				}
+				prefix++;
+			}
+		}
+		return true;
+	}
+
+	private static int binarysearch(List<Integer> list, int prefix,int start,int end) {
+		while (start <= end) {
+			int mid = start + (end - start) / 2;
+			if (list.get(mid) >= prefix) {
+				if (mid == 0 || list.get(mid - 1) < prefix) {
+					return list.get(mid);
+				} else {
+					end = mid - 1;
+				}
+			} else {
+				start = mid + 1;
+			}
+		}
+		return -1;
+	}
+
 
 	public static List<List<String>> allSubSequence(String t) {
 		List<List<String>> result = new ArrayList<>();
