@@ -1,10 +1,9 @@
-package com.learning.dp;
+package com.learning.binarysearch;
 
-import com.sun.tools.javac.comp.Lower;
-
-import javax.swing.text.Highlighter;
-import java.rmi.MarshalledObject;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * @Package: com.learning.dp
@@ -44,6 +43,12 @@ public class IsSubsequence {
 		return i == s.length();
     }
 
+	/**
+	 * 二分法，找到第一个比prefix值大的值
+	 * @param s
+	 * @param t
+	 * @return
+	 */
     public static boolean isSubsequence2(String s, String t) {
 		Map<Character, List<Integer>> map = new HashMap<>(); //<character, index>
 		for (int i = 0; i < t.length(); i++) {
