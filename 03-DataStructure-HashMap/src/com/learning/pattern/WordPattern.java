@@ -5,7 +5,7 @@ import java.util.Map;
 
 /**
  * @Package: com.learning.hashmap
- * @Description:
+ * @Description: 290. Word Pattern
  * @Author: Sammy
  * @Date: 2020/11/7 20:06
  */

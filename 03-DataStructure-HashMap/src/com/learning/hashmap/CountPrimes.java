@@ -11,13 +11,7 @@ import java.util.HashSet;
  */
 
 public class CountPrimes {
-	// public int countPrimes(int n) {
-	// 	//
-	//     // }
 
-	public static void main(String[] args) {
-
-	}
     public boolean isHappy(int n) {
 		if(n == 1)return true;
 		int temp = n;
