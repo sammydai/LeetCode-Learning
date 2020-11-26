@@ -1,9 +1,9 @@
-package com.learning.greedy;
+package com.learning.monotone;
 
 import java.util.Stack;
 
 /**
- * @Package: com.learning.greedy
+ * @Package: com.learning.monotone
  * @Description: 402. Remove K Digits
  * @Author: Sammy
  * @Date: 2020/11/24 21:21
@@ -14,6 +14,12 @@ public class RemoveKdigits {
 		System.out.println(removeKdigits("1234567890", 9));
 	}
 
+	/**
+	 * 使用单调递增栈
+	 * @param num
+	 * @param k
+	 * @return
+	 */
 	public static String removeKdigits(String num, int k) {
        if (k==num.length()) return "0";
 		StringBuffer res = new StringBuffer();
