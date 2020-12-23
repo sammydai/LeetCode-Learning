@@ -20,7 +20,7 @@ public class QuickSort {
 	public static int partition(int[] data, int low, int high) {
 		int pivot = data[low];
 		while (low < high) {
-			while (low<high&&data[high]>pivot){
+			while (low < high && data[high] > pivot) {
 				high--;
 			}
 			if (low < high) {
