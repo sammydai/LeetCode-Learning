@@ -2,10 +2,7 @@ package com.learning.slidewin;
 
 import com.sun.javafx.scene.control.skin.VirtualFlow;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.jar.JarEntry;
 
 /**
@@ -67,6 +64,42 @@ public class lengthOfLongestSubstring {
 		}
 		return maxResult;
 	}
+
+	/**
+	 * 在写亿遍: 滑动窗口 left，right概念
+	 * Input: s = "abcabcbb"
+	   Output: 3
+	   Explanation: The answer is "abc", with the length of 3.
+
+	 	Input: s = "pwwkew"
+	 	Output: 3
+		Explanation: The answer is "wke", with the length of 3.
+	    Notice that the answer must be a substring, "pwke" is a subsequence and not a substring.
+	 * @param s
+	 * @return
+	 */
+	public int lengthOfLongestSubstringV2(String s) {
+		int n = s.length();
+		if (n == 0 || s == null) {
+			return 0;
+		}
+		if (n ==1) {
+			return 1;
+		}
+		int maxResult = Integer.MIN_VALUE;
+		Map<Character, Integer> map = new HashMap<>(256);
+		int left = 0;
+		int right;
+		for (right = 0; right < n; right++) {
+			char cc = s.charAt(right);
+			if (map.containsKey(cc)) {
+				maxResult = Math.max(right - left, maxResult);
+				left = Math.max(left, map.get(cc) + 1);
+			}
+			map.put(cc, right);
+		}
+		return maxResult > right - left ? maxResult : right - left;
+    }
 
 	public static int lengthOfLongestSubstring2(String s) {
 		int n = s.length();
