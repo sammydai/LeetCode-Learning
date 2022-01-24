@@ -158,6 +158,34 @@ public class BinarySearch {
 	}
 
 	/**
+	 * 22年/01/21
+	 * @param a
+	 * @param n
+	 * @param value
+	 * @return
+	 */
+	public static int bsearchFirstOccurNew(int[] a, int n, int value) {
+		int low = 0;
+		int high = n - 1;
+		while (low <= high) {
+			int mid = low + (high - low) / 2;
+			if (a[mid] == value) {
+				if (mid == 0 || a[mid - 1] != value) {
+					return mid;
+				} else {
+					high = mid - 1;
+				}
+			} else if (a[mid] > value) {
+				high = mid - 1;
+			} else {
+				low = mid + 1;
+			}
+		}
+		return -1;
+	}
+
+
+	/**
 	 * 二分法变形：查找最后一个等于value的元素位置
 	 * @param a
 	 * @param n
@@ -204,6 +232,52 @@ public class BinarySearch {
 				}
 			}else {
 				low = mid+1;
+			}
+		}
+		return -1;
+	}
+
+	/**
+	 * 二分法变形：查找第一个大于等于给定值的元素 new
+	 * @param a
+	 * @param n
+	 * @param value
+	 * @return
+	 */
+	public static int binarySearchFirstLargerNew(int[] a, int n, int value) {
+		int low = 0;
+		int high = n - 1;
+		while (low<=high){
+			int mid = low + (high - low) / 2;
+			if (a[mid] >= value) {
+				if (mid == 0 || a[mid - 1] < value) {
+					return mid;
+				} else {
+					high = mid - 1;
+				}
+			} else {
+				low = mid + 1;
+			}
+		}
+		return -1;
+	}
+
+	/**
+	 * 查找最后一个小于等于给定值的元素
+	 */
+	public static int binarySearchLastSmaller(int[] a, int n, int value) {
+		int low = 0;
+		int high = n - 1;
+		while (low <= high) {
+			int mid = low + (high - low) / 2;
+			if (a[mid] <= value) {
+				if (mid == n - 1 || a[mid + 1] > value) {
+					return mid;
+				} else {
+					low = mid + 1;
+				}
+			} else {
+				high = mid - 1;
 			}
 		}
 		return -1;

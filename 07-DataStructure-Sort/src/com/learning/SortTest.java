@@ -1,5 +1,7 @@
 package com.learning;
 
+import sun.util.locale.provider.FallbackLocaleProviderAdapter;
+
 /**
  * @Package: com.learning
  * @Description: BubbleSort
@@ -31,6 +33,25 @@ public class SortTest {
 		}
 	}
 
+	public static void bubbleSort2(int[] a){
+		for (int i = 0; i < a.length - 1; i++) {
+			boolean flag = false;
+			System.out.println("第"+(i+1)+"次外层循环结果");
+			for (int j = 0; j < a.length - i - 1; j++) {
+				if (a[j] > a[j + 1]) {
+					int temp = a[j];
+					a[j] = a[j + 1];
+					a[j + 1] = temp;
+					flag = true;
+				}
+				printArray(a);
+			}
+			if (!flag) {
+				break;
+			}
+		}
+	}
+
 	/**
 	 * 插入排序：已排序部分 / 未排序部分
 	 * 假定a[0]为已排序部分第一个元素
@@ -53,6 +74,8 @@ public class SortTest {
 	}
 
 	public static void main(String[] args) {
+		int[] values = { 1, 8, 9, 6, 4, 22, 8, 11, 7, 999 };
+		bubbleSort2(values);
 		// int source[] = new int[] { 53, 27, 36, 15, 69, 42 };
 		// System.out.print("初始关键字：");
 		// printArray(source);

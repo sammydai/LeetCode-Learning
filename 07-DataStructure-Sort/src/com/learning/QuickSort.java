@@ -24,6 +24,8 @@ public class QuickSort {
 				high--;
 			}
 			if (low < high) {
+				// 必须是先从右向左扫描，把high的值赋给原来pivot的位置即data[low]，
+				// 同时low++，因为此时这个位置已排序好了，肯定比pivot的值小
 				data[low++] = data[high];
 			}
 			System.out.print("从右向左扫描<----"+"  这趟排序结果：");

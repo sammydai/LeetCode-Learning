@@ -39,6 +39,7 @@ public class MergeSort {
 				temp[k++] = data[j++];
 			}
 		}
+		// 剩余部分依次放入临时数组（实际上两个while只会执行其中一个）
 		while (i <= leftEnd) {
 			temp[k++] = data[i++];
 		}
@@ -46,6 +47,8 @@ public class MergeSort {
 			temp[k++] = data[j++];
 		}
 		k = leftStart;
+		// 将临时数组中的内容拷贝回原数组中
+		// （原left-right范围的内容被复制回原数组）
 		for (int element : temp) {
 			data[k++] = element;
 		}
