@@ -1,9 +1,6 @@
 package com.learning.slidewin;
 
-import com.sun.javafx.scene.control.skin.VirtualFlow;
-
 import java.util.*;
-import java.util.jar.JarEntry;
 
 /**
  * @Package: com.learning.slidewin
@@ -94,6 +91,7 @@ public class lengthOfLongestSubstring {
 			char cc = s.charAt(right);
 			if (map.containsKey(cc)) {
 				maxResult = Math.max(right - left, maxResult);
+				//获取重复值的位置，然后取值下一位，两个窗口指针必须向前，不能向后退
 				left = Math.max(left, map.get(cc) + 1);
 			}
 			map.put(cc, right);

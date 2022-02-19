@@ -22,7 +22,7 @@ public class LeeBinarySearch {
 	 * @return
 	 */
 	public int firstBadVersion(int n) {
-		 int low = 0;
+		int low = 0;
 		int high = n;
 		while (low <= high) {
 			int mid = low + ((high - low) >> 1);

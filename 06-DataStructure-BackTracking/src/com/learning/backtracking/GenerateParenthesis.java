@@ -28,4 +28,23 @@ public class GenerateParenthesis {
 		helper(left-1,right,tempResult+"(",result);
 		helper(left,right-1,tempResult+")",result);
 	}
+
+	public List<String> generateParenthesisV2(int n) {
+		List<String> result = new ArrayList<>();
+		helper2(result, "", n, n);
+		return result;
+	}
+
+	private void helper2(List<String> result, String tempResult, int left, int right) {
+		if (left > right || left < 0 || right < 0) {
+			return;
+		}
+		if (left == 0 && right == 0) {
+			result.add(tempResult);
+			return;
+		}
+		helper2(result,tempResult+"(",left-1,right);
+		helper2(result,tempResult+")",left,right-1);
+	}
+
 }

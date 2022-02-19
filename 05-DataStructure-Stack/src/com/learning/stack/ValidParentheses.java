@@ -1,6 +1,7 @@
 package com.learning.stack;
 
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Stack;
 
 /**
@@ -57,5 +58,38 @@ public class ValidParentheses {
 
 	public static void main(String[] args) {
 		System.out.println(new ValidParentheses().minAddToMakeValid("()))(("));
+	}
+
+	/**
+	 * Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+	 An input string is valid if:
+	 Open brackets must be closed by the same type of brackets.Open brackets must be closed in the correct order.
+	 * @param s
+	 * @return
+	 */
+	public boolean isValidV2(String s) {
+		Map<Character, Character> cmap = new HashMap<>();
+		cmap.put(')', '(');
+		cmap.put(']', '[');
+		cmap.put('}', '{');
+		Stack<Character> stack = new Stack<>();
+		if (s.length() % 2 != 0) {
+			return false;
+		}
+		for (int i = 0; i < s.length(); i++) {
+			char cc = s.charAt(i);
+			if (cc == '(' || cc == '{' || cc == '[') {
+				stack.push(cc);
+			} else {
+				if (stack.isEmpty()) {
+					return false;
+				} else if (stack.peek() != cmap.get(cc)) {
+					return false;
+				} else {
+					stack.pop();
+				}
+			}
+		}
+		return stack.isEmpty();
 	}
 }
