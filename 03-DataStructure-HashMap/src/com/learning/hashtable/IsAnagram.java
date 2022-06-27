@@ -23,6 +23,7 @@ public class IsAnagram {
 			return false;
 		}
 		for (int i = 0; i < slength; i++) {
+			//关键是想到hashMap数据结构
 			hashMap.put(s.charAt(i), hashMap.getOrDefault(s.charAt(i), 0) + 1);
 			hashMap.put(t.charAt(i), hashMap.getOrDefault(t.charAt(i), 0) - 1);
 		}

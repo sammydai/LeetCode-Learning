@@ -21,6 +21,7 @@ public class SingleNumber {
 		 }
 		 HashSet<Integer> hashSet = new HashSet<>();
 		 for (int num : nums) {
+		 	// 这个思路很重要，使用hashSet方案
 			 if (!hashSet.contains(num)) {
 				 hashSet.add(num);
 			 } else {
