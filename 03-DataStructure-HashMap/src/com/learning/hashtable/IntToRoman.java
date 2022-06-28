@@ -11,6 +11,7 @@ import java.util.HashMap;
 
 public class IntToRoman {
 	public String intToRoman(int num) {
+		//关键是这个数组的生成，是个位数/十位数/百位数分别枚举出来值
 		String M[] = {"", "M", "MM", "MMM"};
 		String C[] = {"", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"};
 		String X[] = {"", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"};
@@ -31,6 +32,7 @@ public class IntToRoman {
 		int len = s.length();
 		int result = map.get(s.charAt(len - 1));
 		for (int i = s.length() - 2; i >= 0; i--) {
+			//比较大小，如果前者比后者数字小，是要相减的，比如IV = 5-1
 			if (map.get(s.charAt(i)) >= map.get(s.charAt(i + 1))) {
 				result += map.get(s.charAt(i));
 			} else {

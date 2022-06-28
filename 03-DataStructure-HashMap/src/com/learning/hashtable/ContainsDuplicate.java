@@ -12,6 +12,7 @@ import java.util.Set;
  * @Description: 217. Contains Duplicate
  * @Author: Sammy
  * @Date: 2022/1/27 10:12
+ * 确实很简单
  */
 
 public class ContainsDuplicate {

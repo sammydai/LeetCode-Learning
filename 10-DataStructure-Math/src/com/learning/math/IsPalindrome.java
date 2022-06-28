@@ -15,6 +15,7 @@ public class IsPalindrome {
 		int res = 0;
 		int y = x;
 		while (y != 0) {
+			//关键点在于要判断是否超过边界
 			if (res > Integer.MAX_VALUE / 10) return false;
 			res=res*10+y%10;
 			y /= 10;
