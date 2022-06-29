@@ -13,7 +13,8 @@ public class FirstUniqString {
 	public int firstUniqChar(String s) {
 		HashMap<Character, Integer> hashMap = new HashMap<>();
 		for (int i = 0; i < s.length(); i++) {
-			char c = s.charAt(i);
+			Character c = s.charAt(i);
+			//hashMap.getOrDefault这个方法要记住
 			hashMap.put(c, hashMap.getOrDefault(c, 0) + 1);
 		}
 		for (int i = 0; i < s.length(); i++) {
