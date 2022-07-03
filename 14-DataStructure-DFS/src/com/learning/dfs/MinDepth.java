@@ -31,6 +31,10 @@ public class MinDepth {
 		return Math.min(LeftNum,RightNum)+1;
 	}
 
+	//1、确定队列数据结构，将每一层的数据offer到队列中
+	//2、当遍历完一层之后，再把深度+1
+	//3、如何确定：这一层遍历完了？依靠队列的大小，queue.size
+	//4、根据队列的大小来判断，这一层的遍历次数
 	public static int minDepthNew(TreeNode root) {
 		if (root==null) return 0;
 		Queue<TreeNode> queue = new LinkedList<TreeNode>();
