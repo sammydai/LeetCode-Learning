@@ -26,6 +26,7 @@ public class Partition {
 	}
 
 	public void helper(String s, List<String> tempResult, List<List<String>> result) {
+		//有点疑问，还不熟悉，需要在做一遍
 		if (s.length()==0||s==null) {
 			result.add(new ArrayList<>(tempResult));
 			return;

@@ -13,9 +13,9 @@ import java.util.List;
 
 public class Permutations {
 	public static void main(String[] args) {
-		int[] nums = {1,1,3};
-		// System.out.println(new Permutations().permute(nums));
-		System.out.println(new Permutations().permuteUnique(nums));
+		int[] nums = {1,2,3};
+		System.out.println(new Permutations().permute(nums));
+		// System.out.println(new Permutations().permuteUnique(nums));
 	}
 
 	public List<List<Integer>> permute(int[] nums) {
@@ -31,6 +31,12 @@ public class Permutations {
 			return;
 		}
 		for (int i = 0; i < nums.length; i++) {
+			//这里和combine题目不同的点，在于combine有startIndex，比如[1,2,3,4]
+			//combine情况举例：遍历1之后，得到1的所有答案，比如 [1,2][1,3][1,4]
+			//到遍历2的时候，就会去除1，从2自身开始，就是startIndex被传递，[2,3,4]中组合
+			//但是permute情况，遍历1之后，得到1的所有答案，比如[1, 2, 3], [1, 3, 2]
+			//到遍历2的时候，还是要从index=0开始，否则会漏掉1，同时遇到自身，就需要continue跳过
+			//否则自己也会又参与一次选择，得到错误答案[1, 1, 1], [1, 1, 2], [1, 1, 3], [1, 2, 1]……这类
 			if (tempResult.contains(nums[i])) continue;
 			tempResult.add(nums[i]);
 			helper(nums,tempResult,result);
@@ -38,33 +44,8 @@ public class Permutations {
 		}
 	}
 
-	public List<List<Integer>> permuteUnique(int[] nums) {
-		List<List<Integer>> result = new ArrayList<>();
-		if(nums.length == 0) return result;
-		Arrays.sort(nums);
-		List<Integer> tempResult = new ArrayList<>();
-		helperUnique(nums,tempResult,result,new boolean[nums.length]);
-		return result;
-	}
 
-	private void helperUnique(int[] nums, List<Integer> tempResult, List<List<Integer>> result, boolean[] used) {
-		if (tempResult.size()==nums.length) {
-			result.add(new ArrayList<>(tempResult));
-			return;
-		}
-		for (int i = 0; i < nums.length; i++) {
-			if (i > 0 && nums[i] == nums[i - 1] && used[i - 1]) {
-				continue;
-			}
-			if (!used[i]) {
-				used[i] = true;
-				tempResult.add(nums[i]);
-				helperUnique(nums,tempResult,result,used);
-				tempResult.remove(tempResult.size() - 1);
-				used[i] = false;
-			}
-		}
-	}
+
 
 	/**
 	 * 再写亿遍

@@ -1,5 +1,6 @@
 package com.learning.backtracking;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -21,6 +22,7 @@ public class CombinationSum {
 
 	public List<List<Integer>> combinationSum(int[] candidates, int target) {
         List<List<Integer>> result = new ArrayList<>();
+		Arrays.sort(candidates);
 		List<Integer> tempResult = new ArrayList<>();
 		helper(result,tempResult,candidates,target,0);
 		return result;
@@ -35,35 +37,14 @@ public class CombinationSum {
 		} else {
 			for (int i = position; i < candidates.length; i++) {
 				tempResult.add(candidates[i]);
+				//单个值，可以重复使用，所以迭代到下一层级的时候，不需要i+1
 				helper(result, tempResult, candidates, target - candidates[i], i);
 				tempResult.remove(tempResult.size() - 1);
 			}
 		}
 	}
 
-	public List<List<Integer>> combinationSum2(int[] candidates, int target) {
-		Arrays.sort(candidates);
-        List<List<Integer>> result = new ArrayList<>();
-		List<Integer> tempResult = new ArrayList<>();
-		helper2(result,tempResult,candidates,target,0);
-		return result;
-    }
 
-	private void helper2(List<List<Integer>> result, List<Integer> tempResult, int[] candidates, int target, int start) {
-		if (target==0) {
-			result.add(new ArrayList<>(tempResult));
-			return;
-		} else if (target < 0) {
-			return;
-		} else {
-			for (int i = start; i < candidates.length; i++) {
-				if (i > start && candidates[i] == candidates[i - 1]) {
-					continue;
-				}
-				tempResult.add(candidates[i]);
-				helper2(result,tempResult,candidates,target-candidates[i],i+1);
-				tempResult.remove(tempResult.size() - 1);
-			}
-		}
-	}
+
+
 }
