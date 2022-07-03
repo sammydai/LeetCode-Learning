@@ -1,11 +1,10 @@
 package com.learning.dfs;
 
 import com.learning.tree.TreeNode;
+import sun.jvm.hotspot.gc_implementation.parallelScavenge.ParallelScavengeHeap;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.awt.font.TextMeasurer;
+import java.util.*;
 
 /**
  * @Package: com.learning.dfs
@@ -31,7 +30,7 @@ public class PathSum {
 
         if(root.left == null && root.right == null && sum - root.val == 0) return true;
 
-        return hasPathSum(root.left, sum - root.val) || hasPathSum(root.right, sum - root.val);
+        return hasPathSumPlus(root.left, sum - root.val) || hasPathSumPlus(root.right, sum - root.val);
     }
 
 	public static void pathsum(TreeNode root, int tempSum, List<Integer> result, int sum) {
@@ -104,5 +103,35 @@ public class PathSum {
 			helper(root.right,targetSum,tempSum,result,tempResult);
 			tempResult.remove(tempResult.size() - 1);
 		}
+	}
+
+	//把堆栈理解为存储TreeNode的数据结构
+	//不要试图理解出入栈的所有细节，这样会想不通
+	//当进入一个节点，会把它的相邻节点，也入栈到stack中
+	//然后出栈最顶层的节点，去判断是不是叶子节点，是不是target==sum
+	//如果是叶子节点，不符合target==sum，就已经出栈了，再进行下一次循环，这个时候已经退到上一个节点了，
+	// 说明这条路不通，也就是dfs算法的要点，不通就回到上一个阶段
+	public boolean hasPathSumStack(TreeNode root, int sum) {
+		Stack<TreeNode> path = new Stack<>();
+		Stack<Integer> sub = new Stack<>();
+		if (root == null) return false;
+		path.push(root);
+		sub.push(root.val);
+		while (!path.isEmpty()) {
+			TreeNode temp = path.pop();
+			int temVal = sub.pop();
+			if (temp.left == null && temp.right == null && temVal == sum) return true;
+			else {
+				if (temp.left != null) {
+					path.push(temp.left);
+					sub.push(temVal + temp.left.val);
+				}
+				if (temp.right!=null){
+					path.push(temp.right);
+					sub.push(temVal + temp.right.val);
+				}
+			}
+		}
+		return false;
 	}
 }
