@@ -13,37 +13,6 @@ package com.learning.binarysearch;
 public class LeeBinarySearch {
 
 	/**
-	 * 278. First Bad Version
-	 * 二分法:第一个等于值的
-	 * You are given an API bool isBadVersion(version) which returns whether version is bad.
-	 * Implement a function to find the first bad version.
-	 * You should minimize the number of calls to the API.
-	 * @param n
-	 * @return
-	 */
-	public int firstBadVersion(int n) {
-		int low = 0;
-		int high = n;
-		while (low <= high) {
-			int mid = low + ((high - low) >> 1);
-			if (isBadVersion(mid)) {
-				if (mid == 0 || !isBadVersion(mid - 1)) {
-					return mid;
-				} else {
-					high = mid - 1;
-				}
-			} else {
-				low = mid + 1;
-			}
-		}
-		return -1;
-    }
-
-	private boolean isBadVersion(int n) {
-		return true;
-	}
-
-	/**
 	 * 367. Valid Perfect Square
 	 * @param num
 	 * @return

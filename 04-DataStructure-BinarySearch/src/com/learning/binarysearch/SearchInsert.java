@@ -1,8 +1,5 @@
 package com.learning.binarysearch;
 
-import com.sun.corba.se.impl.oa.poa.POAPolicyMediatorImpl_NR_USM;
-
-import java.util.concurrent.TransferQueue;
 
 /**
  * @Package: com.learning.binarysearch
@@ -19,6 +16,7 @@ public class SearchInsert {
 		if (target<nums[0]) return 0;
 		while (low <= high) {
 			int mid = low + ((high - low) >> 1);
+			//找到第一个大于等于target的对象
 			if (nums[mid] >= target) {
 				if (mid == 0 || nums[mid - 1] < target) {
 					return mid;
