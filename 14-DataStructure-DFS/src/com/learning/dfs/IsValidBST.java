@@ -1,7 +1,9 @@
-package com.learning.binarytree;
+package com.learning.dfs;
 
 import com.learning.tree.TreeNode;
 import com.sun.tools.corba.se.idl.constExpr.ShiftLeft;
+
+import java.util.Stack;
 
 /**
  * @Package: com.learning.binarytree
@@ -23,5 +25,24 @@ public class IsValidBST {
 			 return false;
 		}
 		 return isValidBST(root.left, minVal, root.val) && isValidBST(root.right, root.val, maxVal);
+	 }
+
+	 public boolean isValidBSTiterator(TreeNode root) {
+		 if (root==null) {
+			 return true;
+		 }
+		 Stack<TreeNode> stack = new Stack<>();
+		 TreeNode pre = null;
+		 while (root != null || !stack.isEmpty()) {
+		 	while (root!=null){
+		 		stack.push(root);
+				root = root.left;
+			}
+			root = stack.pop();
+		 	if (pre!=null&&root.val<=pre.val) return false;
+		 	pre = root;
+		 	root = root.right;
+		 }
+		 return true;
 	 }
 }
