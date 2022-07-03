@@ -26,4 +26,17 @@ public class IsSameTree {
 		return inorderTraversal(p.left, q.left) && inorderTraversal(p.right, q.right);
 	}
 
+	private boolean test1(TreeNode p, TreeNode q){
+		if (p == null && q == null) {
+			return true;
+		} else if (p == null || q == null) {
+			return false;
+		}
+		if (p.val != q.val) {
+			return false;
+		}
+		return test1(p.left, q.left) && test1(p.right, q.right);
+	}
+
+
 }

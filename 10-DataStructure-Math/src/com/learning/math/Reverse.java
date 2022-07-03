@@ -11,6 +11,7 @@ public class Reverse {
 	public int reverse(int x) {
 		int result = 0;
 		while (x != 0) {
+			// 和求回文数字一致
 			if (Math.abs(result)>Integer.MAX_VALUE/10) {
 				return 0;
 			}
