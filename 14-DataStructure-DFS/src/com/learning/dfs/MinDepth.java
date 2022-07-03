@@ -10,6 +10,7 @@ import java.util.Queue;
 /**
  * @Package: com.learning.dfs
  * @Description: 111. Minimum Depth of Binary Tree
+ * 104. Maximum Depth of Binary Tree
  * @Author: Sammy
  * @Date: 2020/11/7 20:32
  */
@@ -52,22 +53,4 @@ public class MinDepth {
 		}
 		return depth;
 	}
-
-
-	public int maxDepth(TreeNode root) {
-		if (root==null) return 0;
-		Queue<TreeNode> queue = new LinkedList<>();
-		queue.offer(root);
-		int depth = 0;
-		while (!queue.isEmpty()) {
-			int level = queue.size();
-			for (int i = 0; i < level; i++) {
-				TreeNode cur = queue.poll();
-				if (cur.left != null) queue.offer(cur.left);
-				if (cur.right!=null) queue.offer(cur.right);
-			}
-			depth++;
-		}
-		return depth;
-    }
 }

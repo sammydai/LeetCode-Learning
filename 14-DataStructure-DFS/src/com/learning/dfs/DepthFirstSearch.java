@@ -49,4 +49,6 @@ public class DepthFirstSearch {
 			}
 		}
 	}
+	//出栈顺序：根、左、右
+	//入栈顺序：右，左
 }
