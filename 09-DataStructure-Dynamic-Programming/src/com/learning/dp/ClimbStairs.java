@@ -5,9 +5,8 @@ package com.learning.dp;
  * @Description: 70. Climbing Stairs
  * 				 746. Min Cost Climbing Stairs
  * @Author: Sammy
- * @Date: 2020/11/18 13:30
+ * @Date: 2020/11/18 13:30 2022/7/30
  */
-
 public class ClimbStairs {
 	 public int climbStairs(int n) {
 		 if (n<=2) {

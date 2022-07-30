@@ -8,6 +8,7 @@ package com.learning;
  */
 
 public class MissingNumber {
+	//[3,0,1] [0,1]-->2
 	public int missingNumber(int[] nums) {
 		int size = nums.length;
         int i =0;
@@ -27,6 +28,10 @@ public class MissingNumber {
         }
         return size;
     }
+
+	public static void main(String[] args) {
+		new MissingNumber().missingNumber(new int[]{3,0,1});
+	}
 
      public int missingNumberNew(int[] nums) {
 

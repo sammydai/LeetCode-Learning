@@ -4,7 +4,7 @@ package com.learning.twopoints;
  * @Package: com.learning.twopoints
  * @Description: 27. Remove Element
  * @Author: Sammy
- * @Date: 2022/2/17 10:06
+ * @Date: 2022/7/30 10:06
  */
 
 public class RemoveElement {
@@ -16,5 +16,9 @@ public class RemoveElement {
 			}
 		}
 		return j;
+	}
+
+	public static void main(String[] args) {
+		new RemoveElement().removeElement(new int[]{3, 2, 2, 3}, 3);
 	}
 }
