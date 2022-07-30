@@ -58,31 +58,12 @@ public class PathSum {
 		hasPathSum(root, 21);
 	}
 
-	public boolean hasPathSumNew(TreeNode root, int targetSum) {
-		if (root==null) {
-			return false;
-		}
-		boolean result = hasPathSumPro(root, targetSum);
-		return result;
-	}
-
-	private boolean hasPathSumPro(TreeNode root, int targetSum) {
-		if (root == null) {
-			return false;
-		}
-		if (root.left == null && root.right == null && targetSum - root.val == 0) {
-			return true;
-		}
-		return hasPathSum(root.left, targetSum - root.val) || hasPathSum(root.right, targetSum - root.val);
-	}
-
 	public List<List<Integer>> pathSum(TreeNode root, int targetSum) {
         List<List<Integer>> result = new ArrayList<>();
 		List<Integer> tempResult = new ArrayList<>();
 		if (root == null) return result;
 		helper(root, targetSum, 0, result, tempResult);
 		return result;
-
 	}
 
 	private void helper(TreeNode root, int targetSum,int tempSum, List<List<Integer>> result, List<Integer> tempResult) {

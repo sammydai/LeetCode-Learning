@@ -14,7 +14,7 @@ public class lengthOfLongestSubstring {
 	public static void main(String[] args) {
 		System.out.println("lengthOfLongestSubstring");
 		System.out.println("------------------------");
-		System.out.println(lengthOfLongestSubstring2("au"));
+		System.out.println(lengthOfLongestSubstringV2("adbccba"));
 	}
 	/**
 	 * Given a string s, find the length of the longest substring without repeating characters.
@@ -75,7 +75,7 @@ public class lengthOfLongestSubstring {
 	 * @param s
 	 * @return
 	 */
-	public int lengthOfLongestSubstringV2(String s) {
+	public static int 	lengthOfLongestSubstringV2(String s) {
 		int n = s.length();
 		if (n == 0 || s == null) {
 			return 0;
@@ -91,7 +91,12 @@ public class lengthOfLongestSubstring {
 			char cc = s.charAt(right);
 			if (map.containsKey(cc)) {
 				maxResult = Math.max(right - left, maxResult);
-				//获取重复值的位置，然后取值下一位，两个窗口指针必须向前，不能向后退
+				/**
+				 * 获取重复值的位置，然后取值下一位，两个窗口指针必须向前，不能向后退
+				 * 为什么要取left, map.get(cc) + 1的最大值
+				 * 比如adbccba,当left=4 第二个c时，right=b（第二个），从map中查询出来，
+				 * map.get(b)+1=3,如果不比较大小，那left指针就会往回找，出现错误，移动窗口必须往前走
+				 */
 				left = Math.max(left, map.get(cc) + 1);
 			}
 			map.put(cc, right);

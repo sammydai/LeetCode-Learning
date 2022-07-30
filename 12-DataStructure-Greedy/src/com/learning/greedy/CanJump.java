@@ -1,6 +1,5 @@
 package com.learning.greedy;
 
-import sun.font.TrueTypeFont;
 
 /**
  * @Package: com.learning.greedy
@@ -46,19 +45,19 @@ public class CanJump {
 		return nums.length == 1 ? true : false;
 	}
 
-	/**
-	 * 再写一遍
-	 * @param nums
-	 * @return
-	 */
-	public static boolean canJumpV2(int[] nums) {
-		int n = nums.length;
-		int farest = 0;
-		for (int i = 0; i < n; i++) {
-			if ((farest<i)) return false;
-			farest = Math.max(farest, nums[i] + i);
+	public static boolean canJumpU(int[] nums) {
+		int pos = nums.length - 1;
+		int rightmost = 0;
+		for (int i = 0; i <= pos; i++) {
+			if (i <= rightmost) {
+				rightmost = Math.max(rightmost, i + nums[i]);
+				if (rightmost >= pos) {
+					return true;
+				}
+			}
 		}
-		return true;
+		return false;
 	}
+
 
 }

@@ -1,6 +1,8 @@
 package com.learning.binarysearch;
 
 
+import java.beans.Introspector;
+
 /**
  * @Package: com.learning.binarysearch
  * @Description: 35. Search Insert Position

@@ -9,6 +9,9 @@ import com.learning.tree.TreeNode;
  * @Date: 2020/11/15 23:15
  */
 
+/**
+ * 判断是不是平衡二叉树
+ */
 public class BalancedTree {
 	public boolean isBalanced(TreeNode root) {
 		if (root == null) {
@@ -27,5 +30,10 @@ public class BalancedTree {
 		return 1 + Math.max(getDepth(root.left), getDepth(root.right));
 	}
 
+
+	public static int getDepth2(TreeNode root) {
+		if (root == null) return 0;
+		return Math.max(getDepth2(root.left), getDepth2(root.right)) + 1;
+	}
 
 }

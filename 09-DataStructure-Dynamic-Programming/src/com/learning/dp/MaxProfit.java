@@ -1,7 +1,5 @@
 package com.learning.dp;
 
-import com.sun.deploy.jardiff.JarDiff;
-
 /**
  * @Package: com.learning.dp
  * @Description: 121. Best Time to Buy and Sell Stock
@@ -28,6 +26,5 @@ public class MaxProfit {
 		}
 		return profit;
 	}
-
 }
 

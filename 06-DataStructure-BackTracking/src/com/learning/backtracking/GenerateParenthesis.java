@@ -1,5 +1,7 @@
 package com.learning.backtracking;
 
+import com.sun.tools.javah.Gen;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,12 +23,20 @@ public class GenerateParenthesis {
 		if (left > right || left < 0 || right < 0) {
 			return;
 		}
+		// 注意撤出条件
 		if (left == 0 && right == 0) {
 			result.add(tempResult);
 			return;
 		}
 		helper(left-1,right,tempResult+"(",result);
 		helper(left,right-1,tempResult+")",result);
+	}
+
+	public static void main(String[] args) {
+		List<String> result = new GenerateParenthesis().generateParenthesis(3);
+		for (String s : result) {
+			System.out.println(s);
+		}
 	}
 
 	public List<String> generateParenthesisV2(int n) {
