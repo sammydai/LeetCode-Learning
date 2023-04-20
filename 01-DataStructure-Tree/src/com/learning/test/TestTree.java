@@ -1,6 +1,5 @@
 package com.learning.test;
 
-import com.learning.dfs.InorderTraversal;
 import com.learning.tree.TreeNode;
 
 /**
@@ -31,7 +30,7 @@ public class TestTree {
 		// System.out.println(minDepth(root));
 		System.out.println("InorderTraversal");
 		System.out.println("-----------------");
-		System.out.println(InorderTraversal.inorderTraversal(root));
+		// System.out.println(InorderTraversal.inorderTraversal(root));
 		// System.out.println(breadFirstSearchNew(root));
 
 

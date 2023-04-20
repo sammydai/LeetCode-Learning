@@ -1,12 +1,14 @@
 package com.learning.hashcode;
 
-import java.security.Key;
 import java.util.HashMap;
 import java.util.Map;
 
 /**
  * @Package: com.learning.hashcode
  * @Description: hashCode method
+ * 重写equals hashcode方法的原因
+ * equals保证对象的内容、属性相同
+ * hashcode保证对象的hash计算值相同-->在map中的位置相同
  * @Author: Sammy
  * @Date: 2022/1/24 14:38
  */
