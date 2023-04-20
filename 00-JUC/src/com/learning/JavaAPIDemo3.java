@@ -1,9 +1,6 @@
  package com.learning;
 
-import java.util.Random;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.Semaphore;
-import java.util.concurrent.TimeUnit;
+ import java.util.concurrent.CountDownLatch;
 
 public class JavaAPIDemo3 {
     public static void main(String[] args) throws Exception {

@@ -1,9 +1,5 @@
  package com.learning;
 
-import java.util.Random;
-import java.util.concurrent.Semaphore;
-import java.util.concurrent.TimeUnit;
-
 public class JavaAPIDemo2 {
     public static void main(String[] args) {
         for (int x = 0; x < 2; x++) {
