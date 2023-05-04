@@ -1,4 +1,4 @@
-package com.learning.linkedlist;
+package com.learning.twopoints;
 
 /**
  * @Package: com.learning.linkedlist
@@ -8,6 +8,7 @@ package com.learning.linkedlist;
  */
 
 public class RemoveDuplicates {
+
 	public int removeDuplicates(int[] nums) {
 		if (nums == null || nums.length == 0){
 			return 0;
@@ -23,13 +24,6 @@ public class RemoveDuplicates {
 			}
 		}
 		return j;
-		// int i = 0;
-		// for (int j = 1; j < nums.length; j++) {
-		// 	if (nums[i] != nums[j]) {
-		// 		nums[i] = nums[j];
-		// 		i++;
-		// 	}
-		// }
-		// return i + 1;
     }
+
 }

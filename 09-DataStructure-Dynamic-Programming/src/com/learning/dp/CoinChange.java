@@ -1,15 +1,15 @@
 package com.learning.dp;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 
-/**
- * @Package: com.learning.dp
- * @Description: 322. Coin Change
- * @Author: Sammy
- * @Date: 2022/7/30 22:14
- */
 
+/**
+ * 硬币改变
+ * 322. Coin Change
+ *
+ * @author Sammy
+ * @date 2023/04/28
+ */
 public class CoinChange {
 	public int coinChange(int[] coins, int amount) {
 		int[] dp = new int[amount + 1];

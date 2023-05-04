@@ -1,24 +1,23 @@
 package com.learning.twopoints;
 
-/**
- * @Package: com.learning.twopoints
- * @Description: 27. Remove Element
- * @Author: Sammy
- * @Date: 2022/7/30 10:06
- */
 
+/**
+ * 删除元素
+ * 左右指针: 左指针--下一个将要赋值的位置 右指针--当前要处理的元素
+ *
+ * @author Sammy
+ * @date 2023/04/27
+ */
 public class RemoveElement {
 	public int removeElement(int[] nums, int val) {
-		int j = 0;
-		for (int i = 0; i < nums.length; i++) {
-			if (nums[i]!=val) {
-				nums[j++] = nums[i];
+		int left = 0;
+		int n = nums.length;
+		for (int right = 0; right < n; right++) {
+			if (nums[right] != val) {
+				nums[left] = nums[right];
+				left++;
 			}
 		}
-		return j;
-	}
-
-	public static void main(String[] args) {
-		new RemoveElement().removeElement(new int[]{3, 2, 2, 3}, 3);
+		return left;
 	}
 }

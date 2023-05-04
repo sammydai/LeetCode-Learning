@@ -1,11 +1,14 @@
 package com.learning.dp;
 
+
 /**
- * @Package: com.learning.dp
- * @Description: 70. Climbing Stairs
- * 				 746. Min Cost Climbing Stairs
- * @Author: Sammy
- * @Date: 2020/11/18 13:30 2022/7/30
+ * 70. Climbing Stairs
+ * 746. Min Cost Climbing Stairs
+ * 初始化条件是什么
+ * dp[]状态转移方程
+ *
+ * @author Sammy
+ * @date 2023/04/28
  */
 public class ClimbStairs {
 	 public int climbStairs(int n) {
@@ -13,7 +16,6 @@ public class ClimbStairs {
 			 return n;
 		 }
 		 int[] dp = new int[n + 1];
-
 		 dp[1] = 1;
 		 dp[2] = 2;
 		 for (int i = 3; i <=n; i++) {
