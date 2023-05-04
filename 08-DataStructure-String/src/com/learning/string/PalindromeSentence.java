@@ -3,6 +3,7 @@ package com.learning.string;
 /**
  * 125. Valid Palindrome
  * 回文字符串，跳过非字符和数字+统一大小写
+ * two points
  *
  * @author : [Sammy]
  * @version : [v1.0]
