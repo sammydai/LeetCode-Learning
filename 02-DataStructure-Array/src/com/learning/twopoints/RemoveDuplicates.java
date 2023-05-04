@@ -1,12 +1,13 @@
 package com.learning.twopoints;
 
-/**
- * @Package: com.learning.linkedlist
- * @Description: 26. Remove Duplicates from Sorted Array
- * @Author: Sammy
- * @Date: 2022/2/17 11:03
- */
 
+/**
+ * 删除重复
+ * 26. Remove Duplicates from Sorted Array
+ *
+ * @author Sammy
+ * @date 2023/05/04
+ */
 public class RemoveDuplicates {
 
 	public int removeDuplicates(int[] nums) {
@@ -16,14 +17,14 @@ public class RemoveDuplicates {
 		if (nums.length == 1) {
 			return 1;
 		}
-		int j = 1;
+		int slow = 1;
 		for (int i = 1; i < nums.length; i++) {
 			if (nums[i] != nums[i - 1]) {
-				nums[j] = nums[i];
-                j++;
+				nums[slow] = nums[i];
+				slow++;
 			}
 		}
-		return j;
+		return slow;
     }
 
 }

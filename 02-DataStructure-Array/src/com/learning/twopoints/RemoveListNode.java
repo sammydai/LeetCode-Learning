@@ -1,7 +1,7 @@
 package com.learning.twopoints;
 
 /**
- * [一句话描述该类的功能]
+ * 去除链表中重复的值
  *
  * @author : [Sammy]
  * @version : [v1.0]
