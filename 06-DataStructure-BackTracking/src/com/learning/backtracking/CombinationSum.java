@@ -1,6 +1,5 @@
 package com.learning.backtracking;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -8,7 +7,6 @@ import java.util.List;
 /**
  * @Package: com.learning.backtracking
  * @Description: 39. Combination Sum
- * 40. Combination Sum II
  * @Author: Sammy
  * @Date: 2021/3/10 16:53
  */
