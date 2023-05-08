@@ -6,6 +6,12 @@ import java.util.List;
 /**
  * @Package: com.learning.backtracking
  * @Description: 78. Subsets
+ * 子集{1,2}和{2,1} 是一样的，子集也是组合问题
+ * 取过的元素不会重新取
+ * 写回溯算法的时候，for就要从startIndex开始，而不是从0开始！
+ *
+ * 组合、子集：无序
+ * 排列：有序，子集{1,2}和{2,1} 不一样的
  * @Author: Sammy
  * @Date: 2020/11/14 17:32
  */

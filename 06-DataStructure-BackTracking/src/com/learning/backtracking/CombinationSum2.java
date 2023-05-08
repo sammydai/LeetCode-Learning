@@ -12,8 +12,13 @@ import java.util.List;
  * @date 2023/05/06
  */
 public class CombinationSum2 {
+	public static void main(String[] args) {
+		System.out.println(new CombinationSum2().combinationSum2(new int[]{10, 1, 2, 7, 6, 1, 5}, 8));
+	}
+
 	public List<List<Integer>> combinationSum2(int[] candidates, int target) {
 		Arrays.sort(candidates);
+		System.out.println(Arrays.toString(candidates));
 		List<List<Integer>> result = new ArrayList<>();
 		List<Integer> tempResult = new ArrayList<>();
 		boolean[] used = new boolean[candidates.length];
@@ -31,9 +36,9 @@ public class CombinationSum2 {
 			return;
 		}
 		for (int i = startIndex; i < candidates.length; i++) {
-			if (i > 0 && candidates[i] == candidates[i - 1] && used[i - 1] == false) {
-				continue;
-			}
+			// if (i > 0 && candidates[i] == candidates[i - 1] && used[i - 1] == false) {
+			// 	continue;
+			// }
 			used[i] = true;
 			tempResult.add(candidates[i]);
 			backtracking(result, tempResult, candidates, target - candidates[i], i + 1, used);
@@ -41,22 +46,4 @@ public class CombinationSum2 {
 			tempResult.remove(tempResult.size() - 1);
 		}
 	}
-
-	// private void helper(List<List<Integer>> result, List<Integer> tempResult, int[] candidates, int target, int start) {
-	// 	if (target==0) {
-	// 		result.add(new ArrayList<>(tempResult));
-	// 		return;
-	// 	} else if (target < 0) {
-	// 		return;
-	// 	} else {
-	// 		for (int i = start; i < candidates.length; i++) {
-	// 			if (i > start && candidates[i] == candidates[i - 1]) {
-	// 				continue;
-	// 			}
-	// 			tempResult.add(candidates[i]);
-	// 			helper(result,tempResult,candidates,target-candidates[i],i+1);
-	// 			tempResult.remove(tempResult.size() - 1);
-	// 		}
-	// 	}
-	// }
 }

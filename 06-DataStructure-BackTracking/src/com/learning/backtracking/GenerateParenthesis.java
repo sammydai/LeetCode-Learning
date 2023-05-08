@@ -1,6 +1,5 @@
 package com.learning.backtracking;
 
-import com.sun.tools.javah.Gen;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,6 +7,9 @@ import java.util.List;
 /**
  * @Package: com.learning.backtracking
  * @Description: 22. Generate Parentheses
+ * 在强调一下重点：「回溯算法」强调了在状态空间特别大的时候，只用一份状态变量去搜索所有可能的状态，
+ * 在搜索到符合条件的解的时候，通常会做一个拷贝，这就是为什么经常在递归终止条件的时候，有 res.add(new ArrayList<>(path));这样的代码。
+ * 正是因为全程使用一份状态变量，因此它就有「恢复现场」和「撤销选择」的需要。
  * @Author: Sammy
  * @Date: 2020/11/14 11:21
  */
