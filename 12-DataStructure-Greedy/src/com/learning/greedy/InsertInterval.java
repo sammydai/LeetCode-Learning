@@ -1,7 +1,6 @@
-package com.learning.array;
+package com.learning.greedy;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -36,6 +35,8 @@ public class InsertInterval {
 		List<int[]> result = new LinkedList<>();
 		int i = 0;
 		// add all the intervals ending before newInterval starts
+		//现在看重叠的。我们反过来想，没重叠，就要满足：绿区间的左端，落在蓝区间的屁股的后面，反之就有重叠：绿区间的左端 <= 蓝区间的右端，极端的例子就是 [8,10]。
+
 		while (i < intervals.length && intervals[i][1] < newInterval[0]) {
 			result.add(intervals[i]);
 			i++;

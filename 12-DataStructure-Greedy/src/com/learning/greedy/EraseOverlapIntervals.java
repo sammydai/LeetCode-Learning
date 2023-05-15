@@ -1,4 +1,4 @@
-package com.learning.array;
+package com.learning.greedy;
 
 import java.util.Arrays;
 import java.util.Comparator;

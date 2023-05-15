@@ -1,14 +1,15 @@
-package com.learning.array;
+package com.learning.greedy;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+
 /**
- * @Package: com.learning.array
- * @Description: 56. Merge Intervals
- * @Author: Sammy
- * @Date: 2022/7/30 22:39
+ * 合并间隔
+ *
+ * @author Sammy
+ * @date 2023/05/15
  */
 
 public class MergeIntervals {
