@@ -2,6 +2,7 @@ package com.learning.string;
 
 /**
  * 392. Is Subsequence
+ * two points
  *
  * @author : [Sammy]
  * @version : [v1.0]
