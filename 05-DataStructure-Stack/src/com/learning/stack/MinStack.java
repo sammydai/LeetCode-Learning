@@ -11,13 +11,29 @@ import java.util.Stack;
 
 public class MinStack {
 
+	public static void main(String[] args) {
+		Stack<Integer> stack = new Stack<>();
+		stack.push(5);
+		stack.push(9);
+		stack.push(11);
+		Stack<Integer> minstack = new Stack<>();
+		minstack.push(5);
+		minstack.push(9);
+		minstack.push(11);
+		if (stack.peek() == minstack.peek()) {
+			System.out.println("===============");
+		}
+	}
+
 	private Stack<Integer> stack = new Stack<>();
 	private Stack<Integer> minStack = new Stack<>();
 
-	/** initialize your data structure here. */
-    public MinStack() {
+	/**
+	 * initialize your data structure here.
+	 */
+	public MinStack() {
 
-    }
+	}
 
 	/**
 	 * 如果minStack为空或者minStack栈顶元素>要入栈元素
@@ -51,4 +67,6 @@ public class MinStack {
     public int getMin() {
 		return minStack.peek();
 	}
+
+
 }

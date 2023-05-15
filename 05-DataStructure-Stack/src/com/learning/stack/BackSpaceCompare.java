@@ -2,13 +2,13 @@ package com.learning.stack;
 
 import java.util.Stack;
 
-/**
- * @Package: com.learning.stack
- * @Description: 844. Backspace String Compare
- * @Author: Sammy
- * @Date: 2020/11/14 22:12
- */
 
+/**
+ * 删除空间比对
+ *
+ * @author Sammy
+ * @date 2023/05/12
+ */
 public class BackSpaceCompare {
 	public static void main(String[] args) {
 		System.out.println(new BackSpaceCompare().backspaceCompare("y#fo##f", "y#f#o##f"));
