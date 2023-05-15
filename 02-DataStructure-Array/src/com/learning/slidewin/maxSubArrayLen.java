@@ -3,13 +3,14 @@ package com.learning.slidewin;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * @Package: com.learning.slidewin
- * @Description:
- * @Author: Sammy
- * @Date: 2020/11/7 20:50
- */
 
+/**
+ * 滑动窗口
+ * right-left+1==》right-left 因为right本身会新增1，所以长度是right-left
+ *
+ * @author Sammy
+ * @date 2023/05/05
+ */
 public class maxSubArrayLen {
 	public static void main(String[] args) {
 		int[] nums = {2,3,1,2,4,3};
@@ -84,7 +85,7 @@ public class maxSubArrayLen {
 				right++;
 			}
 			while (tempSum >= s) {
-				minResult = Math.min(minResult, right - left + 1);
+				minResult = Math.min(minResult, right - left);
 				tempSum -= nums[left];
 				left++;
 			}
