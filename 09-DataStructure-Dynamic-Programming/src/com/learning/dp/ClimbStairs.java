@@ -26,8 +26,12 @@ public class ClimbStairs {
 
 	 public int minCostClimbingStairs(int[] cost) {
 		 int len = cost.length;
+		 //dp[i]的定义：到达第i台阶所花费的最少体力为dp[i]
 		 int[] dp = new int[len];
 		 int result = 0;
+		 //可以分别踏上第0级与第1级台阶，花费cost[0] + cost[1]；
+		 //也可以从地面开始迈两步直接踏上第1级台阶，花费cost[1]。
+		 //最小值dp[1] = min(cost[0] + cost[1], cost[1]) = cost[1]
 		 dp[0] = cost[0];
 		 dp[1] = cost[1];
 		 for (int i = 2; i < dp.length; i++) {
@@ -35,5 +39,5 @@ public class ClimbStairs {
 		 }
 		 // return dp[cost.length];
 		 return Math.min(dp[len - 1], dp[len - 2]);
-    }
+	 }
 }
