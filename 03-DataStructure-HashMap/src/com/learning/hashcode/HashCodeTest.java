@@ -23,10 +23,11 @@ public class HashCodeTest {
 		System.out.println("zhangsan1 hashcode:" + zhangsan1.hashCode());
 		hashMap.put(zhangsan, 888);
 		hashMap.put(zhangsan1, 777);
-		hashMap.forEach((key,val)-> {
-			System.out.println(key);
-			System.out.println(val);
-		});
+		System.out.println("get value:" + hashMap.get(new Person("zhangsan", 27)));
+		// hashMap.forEach((key,val)-> {
+		// 	System.out.println(key);
+		// 	System.out.println(val);
+		// });
 	}
 
 	private static class Person {

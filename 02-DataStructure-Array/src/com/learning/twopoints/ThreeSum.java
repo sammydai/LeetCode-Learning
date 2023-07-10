@@ -1,8 +1,5 @@
 package com.learning.twopoints;
 
-import com.sun.tools.corba.se.idl.constExpr.ShiftRight;
-import sun.jvm.hotspot.runtime.ResultTypeFinder;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
