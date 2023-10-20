@@ -11,9 +11,7 @@ package com.learning.string;
 public class IsSubsequence {
 	public boolean isSubsequence(String s, String t) {
 		int n = s.length();
-		int y = t.length();
 		int i = 0;
-		int j = 0;
 		while (i < n) {
 			char cc = s.charAt(i);
 			if ((t.indexOf(cc)) == -1) {

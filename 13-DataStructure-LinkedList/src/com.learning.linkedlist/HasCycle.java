@@ -1,6 +1,7 @@
-package com.learning.hashtable;
+package com.learning.linkedlist;
 
-import com.learning.listnode.ListNode;
+
+import com.learning.linkedlist.listnode.ListNode;
 
 /**
  * @Package: com.learning.hashtable

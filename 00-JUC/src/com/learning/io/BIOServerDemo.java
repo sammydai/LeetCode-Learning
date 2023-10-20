@@ -5,7 +5,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 /**
- * [一句话描述该类的功能]
+ * BIOServerDemo
  *
  * @author : [Sammy]
  * @version : [v1.0]

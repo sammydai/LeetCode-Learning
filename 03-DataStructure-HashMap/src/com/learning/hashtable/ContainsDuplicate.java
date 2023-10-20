@@ -1,6 +1,5 @@
 package com.learning.hashtable;
 
-import sun.jvm.hotspot.debugger.posix.elf.ELFSectionHeader;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -37,12 +36,29 @@ public class ContainsDuplicate {
 		Map<Integer, Integer> hashMap = new HashMap<>();
 		for (int i = 0; i < nums.length; i++) {
 			Integer old = hashMap.put(nums[i], i);
-			if (old!=null&& i-old<=k) {
+			if (old != null && i - old <= k) {
 				return true;
 			}
 		}
 		return false;
 	}
 
+	public static void main(String[] args) {
+
+	}
+
+	public boolean containsNearbyDuplicateNew(int[] nums, int k) {
+		int len = nums.length;
+		HashSet hashSet = new HashSet<Integer>();
+		for (int i = 0; i < len; i++) {
+			if (i > k) {
+				hashSet.remove(nums[i - k - 1]);
+			}
+			if (!hashSet.add(nums[i])) {
+				return true;
+			}
+		}
+		return false;
+	}
 
 }

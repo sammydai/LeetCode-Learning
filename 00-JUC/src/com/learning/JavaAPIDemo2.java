@@ -9,5 +9,5 @@ public class JavaAPIDemo2 {
         }
         System.out.println("【*****主线程*****】人齐了，大巴车开走了。");
     }
-     
+
 }

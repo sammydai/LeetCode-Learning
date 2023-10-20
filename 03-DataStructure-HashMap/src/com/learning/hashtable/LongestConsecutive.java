@@ -1,10 +1,11 @@
 package com.learning.hashtable;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
 /**
- * [一句话描述该类的功能]
+ * 移除关联的数字
  *
  * @author : [Sammy]
  * @version : [v1.0]
@@ -34,5 +35,26 @@ public class LongestConsecutive {
 			}
 		}
 		return res;
+	}
+}
+
+class Solution {
+	public int longestConsecutive(int[] nums) {
+		int len = nums.length;
+		if (len <= 1) return len;
+		int count = 1;
+		int maxLen = 1;
+		Arrays.sort(nums);
+		for (int right = 1; right < len; right++) {
+			if (nums[right] == nums[right - 1]) {
+				continue;
+			} else if (nums[right] == nums[right - 1] + 1) {
+				count++;
+				maxLen = Math.max(maxLen, count);
+			} else {
+				count = 1;
+			}
+		}
+		return maxLen;
 	}
 }

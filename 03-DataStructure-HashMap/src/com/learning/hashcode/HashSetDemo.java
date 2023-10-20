@@ -1,4 +1,4 @@
-package com.learning.hashset;
+package com.learning.hashcode;
 
 import java.util.HashSet;
 
@@ -50,12 +50,12 @@ public class HashSetDemo {
 			return name != null ? name.equals(student.name) : student.name == null;
 		}
 
-		@Override
-		public int hashCode() {
-			int result = name != null ? name.hashCode() : 0;
-			result = 31 * result + age;
-			return result;
-		}
+		// @Override
+		// public int hashCode() {
+		// 	int result = name != null ? name.hashCode() : 0;
+		// 	result = 31 * result + age;
+		// 	return result;
+		// }
 
 		@Override
 		public String toString() {

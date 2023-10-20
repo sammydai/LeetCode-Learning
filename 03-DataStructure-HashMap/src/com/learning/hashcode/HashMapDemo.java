@@ -1,4 +1,4 @@
-package com.learning.hashset;
+package com.learning.hashcode;
 
 import java.util.HashMap;
 import java.util.Iterator;

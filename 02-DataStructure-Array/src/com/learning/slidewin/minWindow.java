@@ -1,11 +1,5 @@
 package com.learning.slidewin;
 
-import com.sun.xml.internal.ws.config.management.policy.ManagementAssertionCreator;
-import sun.font.TrueTypeFont;
-import sun.jvm.hotspot.runtime.VM;
-import sun.tools.tree.IfStatement;
-import sun.util.resources.lt.CurrencyNames_lt_LT;
-
 import java.util.HashMap;
 import java.util.Map;
 

@@ -11,6 +11,7 @@ package com.learning.string;
  */
 public class PalindromeSentence {
 	public boolean isPalindrome(String s) {
+		String a = "aabcd";
 		int n = s.length();
 		int left = 0;
 		int right = n - 1;
