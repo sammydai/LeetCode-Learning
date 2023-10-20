@@ -7,7 +7,7 @@ package com.learning.thread;
  * @Date: 2023/3/31 22:49
  */
 
-public class ThreadDemo4 {
+public class ThreadPrint12A34B {
 
 	public static Object lock = new Object();
 
@@ -66,5 +66,53 @@ public class ThreadDemo4 {
 				}
 			}
 		}
+	}
+}
+
+class ThreadDemo4 {
+	private static Object object = new Object();
+
+	private volatile int number = 1;
+
+	private volatile char alp = 'A';
+
+	private Thread threadNum = new Thread(() -> {
+		while (true) {
+			if (number <= 52) {
+				synchronized (object) {
+					object.notifyAll();
+					System.out.println(number + " " + (number + 1));
+					number += 2;
+					try {
+						object.wait();
+					} catch (InterruptedException e) {
+						throw new RuntimeException(e);
+					}
+				}
+			}
+		}
+	});
+
+	private Thread threadAlp = new Thread(() -> {
+		while (true) {
+			if (alp <= 'Z') {
+				synchronized (object) {
+					object.notifyAll();
+					System.out.println(alp);
+					alp++;
+					try {
+						object.wait();
+					} catch (InterruptedException e) {
+						throw new RuntimeException(e);
+					}
+				}
+
+			}
+		}
+	});
+
+	public static void main(String[] args) {
+		new ThreadDemo4().threadNum.start();
+		new ThreadDemo4().threadAlp.start();
 	}
 }

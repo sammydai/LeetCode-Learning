@@ -1,4 +1,4 @@
-package com.learning.juc;
+package com.learning.hashset;
 
 import java.util.HashSet;
 

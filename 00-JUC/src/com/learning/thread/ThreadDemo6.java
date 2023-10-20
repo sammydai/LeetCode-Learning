@@ -14,7 +14,7 @@ import java.util.concurrent.*;
  * @createTime : [2023/6/19 09:44]
  */
 public class ThreadDemo6 {
-	public static void main(String[] args) throws ExecutionException, InterruptedException {
+	public static void main(String[] args) throws Exception {
 		method5();
 	}
 

@@ -8,6 +8,7 @@ package com.learning.thread;
  */
 
 public class WaitDemo {
+
 	public static void main(String[] args) {
 		Object lock = new Object();
 		Thread thread1 = new Thread(() -> {

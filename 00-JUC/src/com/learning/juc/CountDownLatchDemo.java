@@ -52,8 +52,8 @@ public class CountDownLatchDemo {
 			System.out.println(Thread.currentThread().getName() + "执行自己的线程工作");
 		}, "thread-D");
 
-		threadD.start();
 		threadA.start();
+		threadD.start();
 		threadB.start();
 		threadC.start();
 
