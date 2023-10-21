@@ -5,6 +5,7 @@ import java.util.HashMap;
 /**
  * @Package: com.learning.hashtable
  * @Description: 12. Integer to Roman
+ * 13. Roman to Integer
  * @Author: Sammy
  * @Date: 2022/2/7 09:29
  */
@@ -17,6 +18,11 @@ public class IntToRoman {
 		String X[] = {"", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"};
 		String I[] = {"", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"};
 		return M[num / 1000] + C[(num % 1000) / 100] + X[(num % 100) / 10] + I[(num % 10)];
+	}
+
+	public static void main(String[] args) {
+		int aa = 1234;
+		System.out.println(aa % 100 / 10);
 	}
 
 	public int romanToInt(String s) {

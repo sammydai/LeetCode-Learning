@@ -55,4 +55,26 @@ public class CountPrimes {
 		}
 		return true;
 	}
+
+	class Solution {
+		public boolean isHappy(int n) {
+			if (n == 1) return true;
+			HashSet<Integer> hset = new HashSet<>();
+			while (n != 1 && !hset.contains(n)) {
+				hset.add(n);
+				n = getNextNum(n);
+			}
+			return n == 1;
+		}
+
+		private int getNextNum(int n) {
+			int res = 0;
+			while (n != 0) {
+				int temp = n % 10;
+				res += temp * temp;
+				n = n / 10;
+			}
+			return res;
+		}
+	}
 }

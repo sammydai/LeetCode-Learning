@@ -52,6 +52,7 @@ public class TwoSum {
 			int v = numbers[left] + numbers[right];
 			if (v == target) {
 				result = new int[]{left + 1, right + 1};
+				break; //记得尽快退出
 			} else if (v < target) {
 				left++;
 			} else {

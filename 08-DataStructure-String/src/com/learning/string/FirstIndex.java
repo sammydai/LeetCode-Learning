@@ -9,7 +9,7 @@ package com.learning.string;
  */
 public class FirstIndex {
 	public static void main(String[] args) {
-		System.out.println(new FirstIndex().strStr("hello", "ll"));
+		System.out.println(new FirstIndex().strStr("leetcode", "leeto"));
 	}
 
 	public int strStr(String haystack, String needle) {
@@ -34,3 +34,29 @@ public class FirstIndex {
 		return -1;
 	}
 }
+
+class Solution {
+	public static void main(String[] args) {
+		System.out.println(new Solution().strStr("leetcodeleeto", "leeto"));
+	}
+
+	public int strStr(String haystack, String needle) {
+		char[] s = haystack.toCharArray();
+		char[] t = needle.toCharArray();
+		int n = s.length;
+		int m = t.length;
+		for (int i = 0; i <= n - m; i++) {
+			int a = i;
+			int b = 0;
+			while (b < m && s[a] == t[b]) {
+				a++;
+				b++;
+			}
+			if (b == m) {
+				return i;
+			}
+		}
+		return -1;
+	}
+}
+
