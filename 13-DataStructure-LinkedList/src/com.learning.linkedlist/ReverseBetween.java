@@ -3,7 +3,7 @@ package com.learning.linkedlist;
 import com.learning.linkedlist.listnode.ListNode;
 
 /**
- * [一句话描述该类的功能]
+ * 92. Reverse Linked List II
  *
  * @author : [Sammy]
  * @version : [v1.0]
@@ -11,6 +11,28 @@ import com.learning.linkedlist.listnode.ListNode;
  */
 public class ReverseBetween {
 	public ListNode reverseBetween(ListNode head, int left, int right) {
-
+		ListNode pre = new ListNode(0, head);
+		ListNode reversePre = pre;
+		int count = 1;
+		//找到反转区间的头节点的上一个节点
+		while (count < left) {
+			reversePre = reversePre.next;
+			count++;
+		}
+		ListNode reverseHead = reversePre.next;
+		//反转区间[left,right]的节点
+		ListNode last = null;
+		ListNode cur = reverseHead;
+		ListNode next;
+		while (count <= right) {
+			next = cur.next;
+			cur.next = last;
+			last = cur;
+			cur = next;
+			count++;
+		}
+		reversePre.next = last;
+		reverseHead.next = cur;
+		return pre.next;
 	}
 }
