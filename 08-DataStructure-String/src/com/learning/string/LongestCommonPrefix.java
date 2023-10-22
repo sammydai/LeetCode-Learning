@@ -1,7 +1,5 @@
 package com.learning.string;
 
-import sun.jvm.hotspot.runtime.ResultTypeFinder;
-
 /**
  * @Package: com.learning.string
  * @Description: 14. Longest Common Prefix
