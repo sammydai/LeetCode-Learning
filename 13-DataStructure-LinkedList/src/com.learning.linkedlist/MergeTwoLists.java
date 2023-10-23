@@ -28,16 +28,16 @@ public class MergeTwoLists {
 			cur = cur.next;
 		}
 		cur.next = list1 == null ? list2 : list1;
-		while (list1 != null) {
-			cur.next = new ListNode(list1.val);
-			list1 = list1.next;
-			cur = cur.next;
-		}
-		while (list2 != null) {
-			cur.next = new ListNode(list2.val);
-			list2 = list2.next;
-			cur = cur.next;
-		}
+		// while (list1 != null) {
+		// 	cur.next = new ListNode(list1.val);
+		// 	list1 = list1.next;
+		// 	cur = cur.next;
+		// }
+		// while (list2 != null) {
+		// 	cur.next = new ListNode(list2.val);
+		// 	list2 = list2.next;
+		// 	cur = cur.next;
+		// }
 		return dummy.next;
 	}
 
