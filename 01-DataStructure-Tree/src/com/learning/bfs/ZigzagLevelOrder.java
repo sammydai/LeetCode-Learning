@@ -1,7 +1,6 @@
 package com.learning.bfs;
 
 import com.learning.tree.TreeNode;
-import sun.util.resources.cldr.ar.CalendarData_ar_YE;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -17,7 +16,7 @@ import java.util.Queue;
 
 public class ZigzagLevelOrder {
 	public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
-       List<List<Integer>> result = new ArrayList<>();
+       	List<List<Integer>> result = new ArrayList<>();
 		if (root ==null) return result;
 		Queue<TreeNode> queue = new LinkedList<>();
 		queue.offer(root);
@@ -28,7 +27,7 @@ public class ZigzagLevelOrder {
 			List<Integer> tempResult = new ArrayList<>();
 			for (int i = 0; i < levelNum; i++) {
 				TreeNode cur = queue.poll();
-				if (level % 2 != 0) {
+				if (level % 2 == 0) {
 					tempResult.add(cur.val);
 				} else {
 					tempResult.add(0, cur.val);
