@@ -1,6 +1,5 @@
 package com.learning.backtracking;
 
-import javax.xml.bind.ValidationEvent;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -14,7 +13,7 @@ import java.util.List;
 
 public class LetterCombinations {
 	public static void main(String[] args) {
-		System.out.println(letterCombinations("245"));
+		System.out.println(letterCombinations("25"));
 	}
 
 	public static List<String> letterCombinations(String digits) {
@@ -30,8 +29,8 @@ public class LetterCombinations {
         map.put('6', "mno");
         map.put('7', "pqrs");
         map.put('8', "tuv");
-        map.put('9', "wxyz");
-		helper(digits,0,"",result,map);
+		map.put('9', "wxyz");
+		helper2(digits, 0, "", result, map);
 		return result;
 	}
 
@@ -42,12 +41,25 @@ public class LetterCombinations {
 		}
 		char c = digits.charAt(currIndex);
 		if (c == 0 || c == 1) {
-			helper(digits,currIndex+1,tempResult,result,map);
+			helper(digits, currIndex + 1, tempResult, result, map);
 			return;
 		}
 		String value = map.get(c);
 		for (int i = 0; i < value.length(); i++) {
-			helper(digits,currIndex+1,tempResult+value.charAt(i),result,map);
+			helper(digits, currIndex + 1, tempResult + value.charAt(i), result, map);
+		}
+	}
+
+	public static void helper2(String digits, int index, String tempResult, List<String> result, HashMap<Character, String> map) {
+		if (tempResult.length() == digits.length()) {
+			result.add(tempResult);
+			return;
+		}
+		char cc = digits.charAt(index);
+		String value = map.get(cc);
+
+		for (int i = 0; i < value.length(); i++) {
+			helper2(digits, index + 1, tempResult + value.charAt(i), result, map);
 		}
 	}
 
@@ -56,8 +68,8 @@ public class LetterCombinations {
 		if (digits == null || digits.length() == 0) {
 			return result;
 		}
-		char[][] map = {{},{},{'a','b','c'},{'d','e','f'},{'g','h','i'},{'j','k','l'},{'m','n','o'},{'p','q','r','s'},{'t','u','v'},{'w','x','y','z'}};
-        backtrack(digits,result,map,new StringBuilder(),0);
+		char[][] map = {{}, {}, {'a', 'b', 'c'}, {'d', 'e', 'f'}, {'g', 'h', 'i'}, {'j', 'k', 'l'}, {'m', 'n', 'o'}, {'p', 'q', 'r', 's'}, {'t', 'u', 'v'}, {'w', 'x', 'y', 'z'}};
+		backtrack(digits, result, map, new StringBuilder(), 0);
 		return result;
 	}
 

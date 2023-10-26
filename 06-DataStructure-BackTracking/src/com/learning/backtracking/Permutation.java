@@ -28,8 +28,9 @@ public class Permutation {
 
 	private void backtracking(int[] nums, List<List<Integer>> res, List<Integer> track, boolean[] used) {
 		if (track.size() == nums.length) {
-			// res.add(new ArrayList<>(track));
-			res.add(track);
+			res.add(new ArrayList<>(track));
+			return;
+			// res.add(track);
 		}
 		for (int i = 0; i < nums.length; i++) {
 			if (used[i]) {
