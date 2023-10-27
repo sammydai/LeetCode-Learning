@@ -25,4 +25,19 @@ public class maxArea {
 		}
 		return max;
 	}
+
+	public static void main(String[] args) {
+		int i = 18 % 10;
+		System.out.println(i);
+	}
+
+	public int maxAreaNew(int[] height) {
+		int i = 0;
+		int j = height.length - 1;
+		int res = 0;
+		while (i < j) {
+			res = height[i] < height[j] ? Math.max(res, (j - i) * height[i++]) : Math.max(res, (j - i) * height[j--]);
+		}
+		return res;
+	}
 }
