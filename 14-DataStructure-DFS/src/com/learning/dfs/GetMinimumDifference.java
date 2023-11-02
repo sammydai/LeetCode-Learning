@@ -1,5 +1,7 @@
 package com.learning.dfs;
 
+import com.learning.tree.TreeNode;
+
 /**
  * 530. Minimum Absolute Difference in BST
  *
